@@ -1,0 +1,47 @@
+/* Base rules */
+
+*, ::before, ::after {
+    font-family: 'Inter', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    position: relative;
+    top: -200px;
+}
+
+h2, h2 span, h2 input{
+    font-size: 5rem;
+}
+
+h2 input {
+    min-width: 500px;
+    width: min-content;
+    border: none;
+    color: rgb(1, 191, 128);
+}
+
+.container {
+    display: flex;
+}
+
+.appLayout {
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.switchDegree {
+    font-size: larger;
+    color: rgb(222, 131, 33);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: solid 5px rgb(222, 131, 33);
+    margin: 5rem;
+    align-self: flex-end;
+}
