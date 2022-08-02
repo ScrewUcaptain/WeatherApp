@@ -9,19 +9,21 @@
 }
 
 h2 {
-    position: relative;
-    top: -200px;
+    
 }
 
 h2, h2 span, h2 input{
-    font-size: 5rem;
+    font-size: 4rem;
 }
 
 h2 input {
+    font-family: 'Mouse Memoirs', sans-serif;
+    letter-spacing: 0.06em;
     min-width: 500px;
-    width: min-content;
     border: none;
-    color: rgb(1, 191, 128);
+    border-bottom: 5px solid ;
+    color: rgba(236, 110, 76, 255);
+    outline: none;
 }
 
 .container {
@@ -31,17 +33,45 @@ h2 input {
 .appLayout {
     flex-flow: column wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 100vh;
 }
 
-.switchDegree {
+/* .switchDegree {
     font-size: larger;
     color: rgb(222, 131, 33);
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    border: solid 5px rgb(222, 131, 33);
+    border: solid 5px rgba(236, 110, 76, 255);
     margin: 5rem;
     align-self: flex-end;
+} */
+
+form button[type='submit'] 
+{
+        position: relative;
+        bottom: 0.85rem;
+        appearance: none;
+        background-color: transparent;
+        border: 4px solid rgba(236, 110, 76, 255);
+        border-radius: 0.6em;
+        color: rgba(236, 110, 76, 255);
+        cursor: pointer;
+        font-size: 0.75rem;
+        font-weight: 900;
+        margin: auto;
+        padding: 0.75rem;
+        text-decoration: none;
+        text-align: center;
+        transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+form button[type='submit']:hover,
+form button[type='submit']:focus 
+{
+    background-color: rgba(236, 110, 76, 255);
+    color: #fff;
+    outline: 0;
+    box-shadow: 0 0 40px 40px rgba(236, 110, 76, 255) inset;
 }
