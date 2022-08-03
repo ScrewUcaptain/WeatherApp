@@ -40,10 +40,8 @@ if (isset($_GET['location'])) {
         </form>
 
         <section class="currentDay container">
-
-            <div class="currentDay-icon">
-                <img class="currentIcon" src="<?= $iconURL ?>">
-            </div>
+    
+            <img class="currentIcon" src="<?= $iconURL ?>">
 
             <div class="currentDay-Temp">
                 <div class="temp actualTemp"><?= round($result['currentDay']['actualTemp'], 1) ?> C°</div>
