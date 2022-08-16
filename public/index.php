@@ -40,25 +40,29 @@ if (isset($_GET['location'])) {
         </form>
 
         <section class="currentDay container">
-    
+
             <img class="currentIcon" src="<?= $iconURL ?>">
 
             <div class="currentDay-Temp">
+                <h4 class="currentHour">Right now</h4>
                 <div class="temp actualTemp"><?= round($result['currentDay']['actualTemp'], 1) ?> C°</div>
+                <span class="linebreak"> -------------- </span>
+                <h4 class="currentHour"><?= Requester::timeHourMin($result['currentDay']['time12']) ?> H</h4>
                 <div class="temp twelveHTemp"><?= round($result['currentDay']['twelveHTemp'], 1) ?> C°</div>
             </div>
 
             <div class="currentDay-Infos">
                 <div class="wind">
+                    <h4>Wind speed :</h4>
                     <p><?= $result['currentDay']['windSpeed'] . ' m/s' ?></p>
                 </div>
                 <div class="rain">
-                    <div class="prec">
-                        <?= $result['currentDay']['precipitation'] . ' %' ?>
-                    </div>
+                    <h4>Precipitiation :</h4>
+                    <p><?= $result['currentDay']['precipitation'] . ' %' ?></p>
                 </div>
                 <div class="humidity">
-                    <div class="humResult"><?= $result['currentDay']['humidity'] . ' %' ?></div>
+                    <h4>Humidity :</h4>
+                    <p class="humResult"><?= $result['currentDay']['humidity'] . ' %' ?></p>
                 </div>
             </div>
         </section>
@@ -73,10 +77,10 @@ if (isset($_GET['location'])) {
                 </div>
 
                 <div class="tempOtherDay">
-                    <h6 class="hourTemp"><?= Requester::timeHourMin($result['nextDay']['time']) ?></h6>
+                    <h6 class="hourTemp"><?= Requester::timeHourMin($result['nextDay']['time']) ?> H</h6>
                     <div class="afterday_temp0"><?= round($result['nextDay']['actualTemp'], 1) ?> C°</div>
-
-                    <h6 class="hourTemp"><?= Requester::timeHourMin($result['nextDay']['timePlus12']) ?></h6>
+                    <span class="linebreak"> ------- </span>
+                    <h6 class="hourTemp"><?= Requester::timeHourMin($result['nextDay']['timePlus12']) ?> H</h6>
                     <div class="afterday_temp12"><?= round($result['nextDay']['twelveHTemp'], 1) ?> C°</div>
                 </div>
             </div>
@@ -89,10 +93,10 @@ if (isset($_GET['location'])) {
                 </div>
 
                 <div class="tempOtherDay">
-                    <h6 class="hourTemp"><?= Requester::timeHourMin($result['dayTwo']['time']) ?></h6>
+                    <h6 class="hourTemp"><?= Requester::timeHourMin($result['dayTwo']['time']) ?> H</h6>
                     <div class="afterday_temp0"><?= round($result['dayTwo']['actualTemp'], 1) ?> C°</div>
-
-                    <h6 class="hourTemp"><?= Requester::timeHourMin($result['dayTwo']['timePlus12']) ?></h6>
+                    <span class="linebreak"> ------- </span>
+                    <h6 class="hourTemp"><?= Requester::timeHourMin($result['dayTwo']['timePlus12']) ?> H</h6>
                     <div class="afterday_temp12"><?= round($result['dayTwo']['twelveHTemp'], 1) ?> C°</div>
                 </div>
 
@@ -105,10 +109,10 @@ if (isset($_GET['location'])) {
                     <img src="<?= "http://openweathermap.org/img/wn/" . $result['dayThree']['iconWeather'] . "@2x.png" ?>" alt="">
                 </div>
                 <div class="tempOtherDay">
-                    <h6 class="hourTemp"><?= Requester::timeHourMin($result['dayThree']['time']) ?></h6>
+                    <h6 class="hourTemp"><?= Requester::timeHourMin($result['dayThree']['time']) ?> H</h6>
                     <div class="afterday_temp0"><?= round($result['dayThree']['actualTemp'], 1) ?> C°</div>
-
-                    <h6 class="hourTemp"><?= Requester::timeHourMin($result['dayThree']['timePlus12']) ?></h6>
+                    <span class="linebreak"> ------- </span>
+                    <h6 class="hourTemp"><?= Requester::timeHourMin($result['dayThree']['timePlus12']) ?> H</h6>
                     <div class="afterday_temp12"><?= round($result['dayThree']['twelveHTemp'], 1) ?> C°</div>
                 </div>
             </div>

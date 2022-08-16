@@ -74,22 +74,77 @@ form button[type='submit']:focus
     animation: animButton 5s ease 0s 4 normal forwards;
 }
 
-.currentDay 
+.currentDay
 {
-    border: solid rgba(236, 110, 76, 255);
+    border: rgba(236, 110, 76, 255);
+    border-radius: 2.5rem;
     width: 900px;
     height: 300px;
     align-items: center;
     justify-content: space-around;
+    background-color: antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.nextDays {
+    border: rgba(236, 110, 76, 255);
+    border-radius: 2.5rem;
+    width: 900px;
+    height: 270px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(255, 220, 174);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .currentDay>div,.currentIcon
 {
-    border:solid rgba(236, 110, 76, 255);
     flex-grow: 1;
     margin: auto;
     width: 280px;
     height: 280px;
+}
+
+.currentDay-Infos, .currentDay-Temp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.currentDay-Infos>div {
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.currentDay-Infos>div>h4 {
+    margin: auto 0.5rem;
+}
+
+.daysAfter {
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.daysAfter>h4 {
+    margin-top: 0.5rem;
+}
+
+.tempOtherDay {
+    margin: 0.5rem;
+}
+
+.tempOtherDay>div {
+    margin: 0.25rem auto;
+}
+
+.tempOtherDay>h6 {
+    margin: 0.5rem auto 0.25rem auto;
+}
+
+.linebreak {
+    letter-spacing: -0.15rem;
 }
 
 @keyframes animButton {

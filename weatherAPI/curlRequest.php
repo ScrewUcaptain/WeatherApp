@@ -92,6 +92,8 @@ class Requester
                 'windSpeed' => $data["list"][0]['wind']['speed'],
                 'humidity' => $data["list"][0]['main']['humidity'],
                 'precipitation' => $precipitation,
+                'time' => $data['list'][0]['dt'],
+                'time12' => $data['list'][3]['dt'],
             ],
             'nextDay' => [
                 'iconWeather' => $data["list"][8]['weather'][0]['icon'],
