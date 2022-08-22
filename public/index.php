@@ -3,10 +3,15 @@
 
 require_once __DIR__ . '/../weatherAPI/curlRequest.php';
 $api = new Requester();
+
 if (isset($_GET['location'])) {
     $location = $_GET['location'] ?? "Paris, France";
     $result = $api->getData();
     $iconURL = "http://openweathermap.org/img/wn/" . $result['currentDay']['iconWeather'] . "@2x.png";
+} else {
+    $location = $_GET['location'] ?? "Paris, France";
+    $result = $api->getData();
+    $iconURL = "http://openweathermap.org/img/wn/01n@2x.png";
 }
 ?>
 
@@ -32,8 +37,8 @@ if (isset($_GET['location'])) {
         <!-- SEARCH AREA FOR USER INPUT -->
         <form action="">
             <h2 class="textSearch">Right now in,
-                <input type="text" name="location" id="location" size="10" oninput="this.size = this.value.length" placeholder="Paris, France" value="<?= $location ?>"> <br>
-                it's <span class="weather"><?= $result['currentDay']['description']; ?></span>.
+                <input type="text" name="location" id="location" size="10" oninput="this.size = this.value.length" placeholder=" <?php if(!str_starts_with($location ,'<')) {echo $location;} else {echo 'Paris, France';}?>"> <br>
+                it's <span class="weather"><?= $result['currentDay']['description'] ?></span>.
                 <button formmethod="GET" type="submit">GO ➔ </button>
             </h2>
             <!-- THIS DAY -->
