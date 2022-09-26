@@ -69,8 +69,6 @@ class Requester
     public function getData()
     {
         $temp = $_GET['location'] ?? 'Paris, France';
-
-        // $tempArr = preg_split("/[\s,]+/", $temp);
         $tempArr = explode(',', $temp);
         $city = $tempArr[0] ?? '';
         $country = $tempArr[1] ?? '';
